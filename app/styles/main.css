@@ -1,0 +1,847 @@
+@import 'tailwindcss';
+
+/* Saira, from @fontsource-variable/saira (SIL Open Font License 1.1). This weight-only latin-ext file is for ₱, with the
+   width axis's stretch range so condensed prices still take ₱ from Saira; the width-axis latin-ext file is 42 KB more. */
+@font-face {
+  font-family: 'Saira Variable';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 100 900;
+  font-stretch: 50% 125%;
+  src: url('../../node_modules/@fontsource-variable/saira/files/saira-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Saira Variable';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 100 900;
+  font-stretch: 50% 125%;
+  src: url('../../node_modules/@fontsource-variable/saira/files/saira-latin-wdth-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Arial sized to Saira's normal width and line metrics (measured with fontTools), for a cold first visit. */
+@font-face {
+  font-family: 'Saira Fallback';
+  src: local('Arial');
+  size-adjust: 103.88%;
+  ascent-override: 109.26%;
+  descent-override: 42.26%;
+  line-gap-override: 0%;
+}
+
+@theme {
+  --color-*: initial;
+  --color-canvas: oklch(1 0 0);
+  --color-surface: oklch(0.966 0.003 255);
+  --color-ink: oklch(0.215 0.012 255);
+  --color-muted: oklch(0.47 0.013 255);
+  --color-line: oklch(0.91 0.004 255);
+  --color-line-strong: oklch(0.6 0.011 255);
+  --color-graphite: oklch(0.2 0.01 255);
+  --color-graphite-raised: oklch(0.265 0.012 255);
+  --color-on-graphite: oklch(0.985 0 0);
+  --color-on-graphite-muted: oklch(0.79 0.009 255);
+  --color-accent: oklch(0.55 0.215 24);
+  --color-accent-hover: oklch(0.485 0.195 24);
+  --color-accent-ink: oklch(1 0 0);
+  --color-success: oklch(0.515 0.12 152);
+  --color-success-on-graphite: oklch(0.8 0.15 152);
+  --color-danger: oklch(0.5 0.185 18);
+  --color-danger-on-graphite: oklch(0.75 0.13 18);
+  --color-track: oklch(0.985 0 0 / 0.18);
+  --color-rule-on-graphite: oklch(0.985 0 0 / 0.14);
+  --color-backdrop: oklch(0.2 0.01 255 / 0.64);
+
+  --font-*: initial;
+  --font-sans: 'Saira Variable', 'Saira Fallback', system-ui, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-md: 1rem;
+  --text-md--line-height: 1.25;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.5;
+  --text-h3: clamp(1.25rem, 1.15rem + 0.4vw, 1.375rem);
+  --text-h3--line-height: 1.25;
+  --text-h2: clamp(1.75rem, 1.35rem + 1.6vw, 2.625rem);
+  --text-h2--line-height: 0.98;
+  --text-h1: clamp(2.25rem, 1.3rem + 3.6vw, 3.75rem);
+  --text-h1--line-height: 0.98;
+  --text-total: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  --text-total--line-height: 1;
+
+  --font-weight-heading: 650;
+
+  --tracking-*: initial;
+  --tracking-display: -0.01em;
+  --tracking-wordmark: 0.01em;
+  --tracking-plate: 0.06em;
+
+  --radius-*: initial;
+  --radius-sm: 2px;
+  --radius-plate: 3px;
+
+  /* Depth comes from colour blocks, never shadows. */
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --text-shadow-*: initial;
+
+  --ease-*: initial;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --animate-*: initial;
+  /* Home's opening: a 10 px rise, once, ending fully visible with or without scripts. */
+  --animate-hero-in: hero-in 420ms cubic-bezier(0.2, 0, 0, 1) both;
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  /* Breakpoints sit where the content stops working, not at device widths. */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 30rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 60rem;
+  --breakpoint-xl: 64rem;
+
+  --container-*: initial;
+  --container-page: 77.5rem;
+  --container-text: 40rem;
+  --container-measure: 34rem;
+}
+
+/* Saira's width axis: 82 % for headlines and the wordmark, 87.5 % for figures and plates. */
+@utility stretch-display {
+  font-stretch: 82%;
+}
+
+@utility num {
+  font-stretch: 87.5%;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: calc(var(--container-page) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility section-pad {
+  padding-block: var(--section);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --gutter: clamp(1rem, 3vw, 3rem);
+    --section: clamp(3.5rem, 7vw, 6rem);
+    --header: 4rem;
+    /* One simulated minute on the bay board; progress bars move linearly across it. */
+    --tick: 1000ms;
+    --focus-color: var(--color-ink);
+  }
+
+  html {
+    scroll-padding-top: calc(var(--header) + 1rem);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    min-width: 20rem;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2 {
+    font-stretch: 82%;
+    font-weight: 700;
+    letter-spacing: var(--tracking-display);
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-weight: var(--font-weight-heading);
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+  }
+
+  /* Headings and status boxes that script focuses (tabindex="-1") aren't controls, so no ring. Only these tags are
+     listed, so the Visit tabs (tabindex -1 until selected) keep theirs. */
+  :is(h1, h2, h3, h4, p, div, section, main)[tabindex='-1']:focus-visible {
+    outline: none;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-canvas);
+  }
+
+  /* The inline <head> script adds .js before first paint. */
+  html.js [data-fallback],
+  html:not(.js) [data-enhanced] {
+    display: none !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+@layer components {
+  /* Transform and opacity only, so layout never moves. Only shared/reveal.ts adds .reveal-item. */
+  .reveal-item {
+    transition:
+      opacity 560ms var(--ease-out),
+      transform 560ms var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  html.js .reveal-item:not(.is-revealed) {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html.js .reveal-item:not(.is-revealed) {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* A printed page shows everything, scrolled to or not. */
+  @media print {
+    html.js .reveal-item:not(.is-revealed) {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Inlined Phosphor icons; size utilities override this default. */
+  .icon {
+    width: 1.25em;
+    height: 1.25em;
+    flex: none;
+  }
+
+  /* The Menu button shows only with scripts, below 60rem; without scripts the footer carries the links. */
+  .menu-toggle {
+    display: none;
+  }
+
+  @media (max-width: 59.99rem) {
+    html.js .menu-toggle {
+      display: inline-flex;
+    }
+  }
+
+  /* The menu covers the page, so the page behind it must not scroll. */
+  html:has(.menu-panel[open]) {
+    overflow: hidden;
+  }
+
+  /* It settles in from just above (200 ms) as it opens; closing is immediate. */
+  .menu-panel[open] {
+    transition:
+      opacity 200ms var(--ease-out),
+      translate 200ms var(--ease-out);
+  }
+
+  @starting-style {
+    .menu-panel[open] {
+      opacity: 0;
+      translate: 0 -0.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu-panel[open] {
+      transition: none;
+    }
+  }
+
+  /* Visit page: the panel to show is known before scripts run (inline script reads #book), so nothing moves. */
+  html.js[data-visit='schedule'] #panel-walk-in,
+  html.js:not([data-visit='schedule']) #panel-schedule {
+    display: none;
+  }
+
+  /* Home's wait sign: both states share one grid cell, so switching to "Closed now" never moves the page. */
+  .wait-sign__states {
+    display: grid;
+  }
+
+  .wait-sign__states > * {
+    grid-area: 1 / 1;
+  }
+
+  .wait-sign[data-state='open'] [data-when='closed'],
+  .wait-sign[data-state='closed'] [data-when='open'],
+  .wait-sign:not([data-state]) [data-when='closed'] {
+    visibility: hidden;
+  }
+
+  /* The plate chip is the same on light and dark. */
+  .plate {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.75rem;
+    padding: 0.125rem 0.5rem;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    border: 1.5px solid var(--color-ink);
+    border-radius: var(--radius-plate);
+    font-size: 0.9375rem;
+    font-stretch: 87.5%;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: var(--tracking-plate);
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .you {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.0625rem 0.375rem;
+    background: var(--color-on-graphite);
+    color: var(--color-ink);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* The cells keep plain class names because tests/page.test.ts reads them against the data. */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .price-table :is(th, td) {
+    padding: 0.875rem 0.75rem;
+    border-bottom: 1px solid var(--color-line);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .price-table :is(th, td):first-child {
+    padding-left: 0;
+  }
+
+  .price-table thead th {
+    padding-block: 0.75rem;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    vertical-align: bottom;
+  }
+
+  .price-table thead th[data-v],
+  .price-table .price {
+    text-align: right;
+  }
+
+  .price-table tbody th {
+    font-weight: 400;
+  }
+
+  .vehicle-head__name {
+    display: block;
+    color: var(--color-ink);
+    font-size: var(--text-md);
+    font-weight: 600;
+  }
+
+  .service {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    cursor: pointer;
+  }
+
+  .service__name {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .service:has(input:disabled) {
+    cursor: not-allowed;
+  }
+
+  .service:has(input:disabled) .service__name {
+    color: var(--color-muted);
+  }
+
+  .service__desc {
+    display: block;
+    max-width: 30rem;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .service__reason {
+    display: none;
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .service__tag {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.0625rem 0.5rem;
+    border: 1px solid var(--color-line-strong);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: 600;
+  }
+
+  html.js :is(.service__desc, .service__reason, .service__tag) {
+    margin-left: 2.125rem;
+  }
+
+  html.js .picker[data-vehicle='motorcycle'] .service__reason {
+    display: block;
+  }
+
+  .price-table :is(.time, .price) {
+    white-space: nowrap;
+  }
+
+  .price-table .price {
+    font-size: var(--text-lg);
+  }
+
+  .price-table .price--na {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-stretch: 100%;
+    font-weight: 500;
+  }
+
+  /* The chosen vehicle's column: no tinted rows, no coloured cells. */
+  html.js .picker[data-vehicle='small'] [data-v='small'],
+  html.js .picker[data-vehicle='medium'] [data-v='medium'],
+  html.js .picker[data-vehicle='large'] [data-v='large'],
+  html.js .picker[data-vehicle='motorcycle'] [data-v='motorcycle'] {
+    background: var(--color-surface);
+  }
+
+  html.js .picker[data-vehicle='small'] thead [data-v='small'],
+  html.js .picker[data-vehicle='medium'] thead [data-v='medium'],
+  html.js .picker[data-vehicle='large'] thead [data-v='large'],
+  html.js .picker[data-vehicle='motorcycle'] thead [data-v='motorcycle'] {
+    box-shadow: inset 0 2px 0 var(--color-ink);
+  }
+
+  html.js .picker[data-vehicle='small'] tr:has(input:checked:enabled) [data-v='small'],
+  html.js .picker[data-vehicle='medium'] tr:has(input:checked:enabled) [data-v='medium'],
+  html.js .picker[data-vehicle='large'] tr:has(input:checked:enabled) [data-v='large'],
+  html.js .picker[data-vehicle='motorcycle'] tr:has(input:checked:enabled) [data-v='motorcycle'] {
+    font-weight: 700;
+  }
+
+  @media (max-width: 59.99rem) {
+    html.js .vehicle-head__hint {
+      display: none;
+    }
+  }
+
+  /* Phones: service, time and the chosen vehicle's price only. */
+  @media (max-width: 47.99rem) {
+    html.js .picker:not([data-vehicle='small']) [data-v='small'],
+    html.js .picker:not([data-vehicle='medium']) [data-v='medium'],
+    html.js .picker:not([data-vehicle='large']) [data-v='large'],
+    html.js .picker:not([data-vehicle='motorcycle']) [data-v='motorcycle'] {
+      display: none;
+    }
+
+    html.js .price-table :is(th, td) {
+      padding-inline: 0.5rem;
+    }
+
+    html.js .price-table :is(th, td):first-child {
+      padding-left: 0;
+    }
+
+    html.js .price-table .service__name {
+      font-size: var(--text-base);
+    }
+
+    /* A time never wraps mid-value ("1 h 30 min" stays whole); the service name takes the slack. */
+    html.js .price-table .time {
+      color: var(--color-muted);
+      font-size: var(--text-sm);
+    }
+  }
+
+  .check {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  .check input {
+    appearance: none;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    border: 2px solid var(--color-line-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-canvas);
+    cursor: pointer;
+    transition:
+      background-color 150ms var(--ease-out),
+      border-color 150ms var(--ease-out);
+  }
+
+  .check input:checked {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .check input:disabled {
+    background: var(--color-surface);
+    border-color: var(--color-line-strong);
+    cursor: not-allowed;
+  }
+
+  .check .icon {
+    position: relative;
+    width: 0.875rem;
+    height: 0.875rem;
+    color: var(--color-accent-ink);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 150ms var(--ease-out);
+  }
+
+  .check input:checked + .icon {
+    opacity: 1;
+  }
+
+  .check input:checked:disabled + .icon {
+    color: var(--color-muted);
+  }
+
+  /* Kept as articles so tests/page.test.ts can read them. */
+  .plan-card {
+    display: grid;
+    gap: 0.5rem 2rem;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--color-line-strong);
+  }
+
+  .plan-card h3 {
+    font-size: var(--text-h3);
+  }
+
+  @media (min-width: 48rem) {
+    .plan-card {
+      grid-template-columns: minmax(0, 1fr) 13rem 13rem;
+      align-items: baseline;
+    }
+  }
+
+  .plan-all {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    gap: 0.125rem 1.5rem;
+  }
+
+  .plan-all dt {
+    color: var(--color-muted);
+  }
+
+  .bay {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    grid-template-areas:
+      'photo head'
+      'photo plate'
+      'photo size'
+      'photo bar';
+    align-content: start;
+    gap: 0.375rem 0.875rem;
+    padding: 0.75rem;
+    background: var(--color-graphite-raised);
+    border-radius: var(--radius-sm);
+  }
+
+  .bay__head {
+    grid-area: head;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.5rem;
+    font-weight: 600;
+  }
+
+  .bay__left {
+    margin-left: auto;
+    color: var(--color-on-graphite-muted);
+  }
+
+  .bay__photo {
+    display: contents;
+  }
+
+  .bay__frame {
+    grid-area: photo;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .bay__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .bay__plate {
+    grid-area: plate;
+    justify-self: start;
+  }
+
+  .bay__size {
+    grid-area: size;
+    color: var(--color-on-graphite-muted);
+    font-size: var(--text-sm);
+  }
+
+  .bay__open {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 0.25rem;
+    color: var(--color-success-on-graphite);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .bay__bar {
+    grid-area: bar;
+    align-self: end;
+    display: block;
+    height: 4px;
+    overflow: hidden;
+    background: var(--color-track);
+    border-radius: 2px;
+  }
+
+  .bay__bar > span {
+    display: block;
+    height: 100%;
+    background: var(--color-on-graphite);
+    transform: scaleX(var(--progress, 0));
+    transform-origin: left center;
+    transition: transform var(--tick) linear;
+  }
+
+  /* An open bay keeps its full height (hidden, not removed), so a bay turning over never moves the page. */
+  .bay[data-state='open'] :is(.bay__left, .bay__plate, .bay__size, .bay__bar, .bay__img) {
+    visibility: hidden;
+  }
+
+  .bay:not([data-state='open']) .bay__open {
+    display: none;
+  }
+
+  @media (min-width: 48rem) {
+    .bay {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        'head'
+        'photo'
+        'size'
+        'bar';
+      padding: 0.875rem;
+    }
+
+    .bay__photo {
+      grid-area: photo;
+      display: block;
+      position: relative;
+    }
+
+    .bay__plate {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .queue-row {
+    display: grid;
+    grid-template-columns: 3.5rem auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3.5rem;
+    padding-block: 0.5rem;
+    border-bottom: 1px solid var(--color-rule-on-graphite);
+  }
+
+  .queue-row__thumb {
+    position: relative;
+    width: 3.5rem;
+    aspect-ratio: 4 / 3;
+    background: var(--color-graphite-raised);
+    border-radius: var(--radius-sm);
+  }
+
+  .queue-row__thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .queue-row__what {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.5rem;
+    color: var(--color-on-graphite-muted);
+    font-size: var(--text-sm);
+    line-height: 1.3;
+  }
+
+  .queue-row__eta {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .queue-row--yours .queue-row__what {
+    color: var(--color-on-graphite);
+    font-weight: 600;
+  }
+
+  /* Taken and past times keep a word, not just a colour. */
+  .chip {
+    position: relative;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    min-height: 2.75rem;
+    padding: 0.375rem 0.25rem;
+    border: 1.5px solid var(--color-on-graphite-muted);
+    border-radius: var(--radius-sm);
+    color: var(--color-on-graphite);
+    line-height: 1.15;
+    text-align: center;
+    cursor: pointer;
+    transition:
+      background-color 150ms var(--ease-out),
+      border-color 150ms var(--ease-out),
+      color 150ms var(--ease-out);
+  }
+
+  .chip input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: inherit;
+  }
+
+  .chip:hover:not(:has(input:disabled)) {
+    border-color: var(--color-on-graphite);
+  }
+
+  .chip:has(input:checked) {
+    background: var(--color-on-graphite);
+    border-color: var(--color-on-graphite);
+    color: var(--color-ink);
+  }
+
+  .chip:has(input:focus-visible) {
+    outline: 2px solid var(--color-on-graphite);
+    outline-offset: 2px;
+  }
+
+  .chip:has(input:disabled) {
+    border-color: var(--color-rule-on-graphite);
+    color: var(--color-on-graphite-muted);
+    cursor: not-allowed;
+  }
+
+  .chip__small {
+    font-size: var(--text-xs);
+    font-weight: 500;
+  }
+
+  .chip__big {
+    font-size: var(--text-lg);
+  }
+
+  .day {
+    min-height: 3.5rem;
+  }
+
+  .slot .chip__big {
+    font-size: var(--text-md);
+  }
+
+  .slot--taken .chip__big,
+  .slot--past .chip__big {
+    text-decoration: line-through;
+  }
+}

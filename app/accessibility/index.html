@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accessibility: Bayline car wash, Mandaue City</title>
+    <meta name="description" content="How Bayline’s website works with a keyboard, a screen reader, larger text and reduced motion, what still falls short, and how to tell us." />
+    <link rel="canonical" href="%VITE_SITE_URL%accessibility/" />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="Accessibility: Bayline car wash, Mandaue City" />
+    <meta property="og:description" content="How Bayline’s website works with a keyboard, a screen reader, larger text and reduced motion, what still falls short, and how to tell us." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%VITE_SITE_URL%accessibility/" />
+    <meta property="og:image" content="%VITE_SITE_URL%og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bayline, a concept car wash in Subangdaku, Mandaue City: a soaped sedan in a wash bay and the current wait for a walk-in." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Accessibility: Bayline car wash, Mandaue City" />
+    <meta name="twitter:description" content="How Bayline’s website works with a keyboard, a screen reader, larger text and reduced motion, what still falls short, and how to tell us." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%og.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="oklch(1 0 0)" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Before first paint: .js for the enhanced layout, and data-signed-in so the header says Account, not Sign in -->
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('bayline.session'))document.documentElement.dataset.signedIn=''}catch(e){}</script>
+    <script type="module" src="/main.ts"></script>
+  </head>
+  <body>
+    <a class="absolute top-2 left-4 z-50 -translate-y-[200%] rounded-sm bg-ink px-4 py-2 font-semibold text-canvas focus-visible:translate-y-0" href="#main">Skip to content</a>
+
+    <!-- @include header current="accessibility" -->
+
+    <main id="main">
+      <article class="section-pad" aria-labelledby="a11y-title">
+        <div class="wrap grid gap-x-12 gap-y-10 lg:grid-cols-12">
+          <header class="max-w-text lg:col-span-12">
+            <h1 class="text-h1" id="a11y-title">Accessibility</h1>
+            <p class="mt-4 text-lg text-muted">Checking the wait, comparing prices, joining the line and booking should work for everyone, however you use the web.</p>
+          </header>
+
+          <div class="max-w-text lg:col-span-8 [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-4 [&_h2]:mt-12 [&_h2]:text-h3 [&_p]:mt-4 [&_ul]:mt-4 [&_ul]:grid [&_ul]:list-disc [&_ul]:gap-2 [&_ul]:pl-6">
+            <p class="mt-0!">We build this site to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. It’s a demonstration site for a concept brand, and it gets the same care a live one would.</p>
+
+            <h2 id="works">What works today</h2>
+            <ul>
+              <li>Every control works from the keyboard: Tab and Shift+Tab move through the page in reading order, Enter and Space press buttons and pick options, and Escape closes the menu and dialogs.</li>
+              <li>Whatever has keyboard focus shows a clear outline, on light and dark sections alike.</li>
+              <li>Text and its background meet the AA contrast ratios: 4.5:1 for body text and 3:1 for large text and the edges of controls.</li>
+              <li>Text can be enlarged to 200% without being cut off, and the pages reflow to a single column on narrow screens.</li>
+              <li>Form errors say in words what’s wrong and how to fix it, next to the field, not just with a red outline.</li>
+              <li>Updates that appear away from where you are, such as your place in the line, the running total in the price list and items added to your basket, are announced to screen readers.</li>
+              <li>With reduced motion turned on in your device settings, transitions finish at once.</li>
+              <li>Photos that carry information have text alternatives. The vehicle photos on the bay board are decorative: the plate number and size are always given as text.</li>
+            </ul>
+
+            <h2 id="limits">Where it falls short</h2>
+            <ul>
+              <li>Once you join or press Play, the sample line on the bay board moves a simulated minute every second. Its Pause button stops it while you read.</li>
+              <li>Signing in and the basket need JavaScript and site storage, and booking a time needs JavaScript. Without them, prices, wash packs and hours still show.</li>
+            </ul>
+
+            <h2 id="tell-us">Tell us what doesn’t work</h2>
+            <p>If something on the site gets in your way, use the <a href="/bayline/contact/">contact form</a> and say which page and what happened. On this demonstration site the form sends nothing, so please treat this page as the commitment Bayline would make.</p>
+            <p class="text-sm text-muted">Last reviewed 18 November 2026</p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- @include footer -->
+  </body>
+</html>

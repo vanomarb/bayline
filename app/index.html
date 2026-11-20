@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bayline: car wash and detailing in Mandaue City</title>
+    <meta name="description" content="Car wash and detailing in Subangdaku, Mandaue City. Join the line by plate number, book a time, or save with a monthly wash pack." />
+    <link rel="canonical" href="%VITE_SITE_URL%" />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="Bayline: car wash and detailing in Mandaue City" />
+    <meta property="og:description" content="Car wash and detailing in Subangdaku, Mandaue City. Join the line by plate number, book a time, or save with a monthly wash pack." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%VITE_SITE_URL%" />
+    <meta property="og:image" content="%VITE_SITE_URL%og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bayline, a concept car wash in Subangdaku, Mandaue City: a soaped sedan in a wash bay and the current wait for a walk-in." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bayline: car wash and detailing in Mandaue City" />
+    <meta name="twitter:description" content="Car wash and detailing in Subangdaku, Mandaue City. Join the line by plate number, book a time, or save with a monthly wash pack." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%og.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="oklch(1 0 0)" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Before first paint: .js for the enhanced layout, and data-signed-in so the header says Account, not Sign in -->
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('bayline.session'))document.documentElement.dataset.signedIn=''}catch(e){}</script>
+    <script type="module" src="/main.ts"></script>
+  </head>
+  <body>
+    <a class="absolute top-2 left-4 z-50 -translate-y-[200%] rounded-sm bg-ink px-4 py-2 font-semibold text-canvas focus-visible:translate-y-0" href="#main">Skip to content</a>
+
+    <!-- @include header current="home" -->
+
+    <main id="main">
+      <!-- Phones meet the plate field before the board; from lg the join strip spans the foot of the band -->
+      <section class="bg-graphite pt-8 pb-14 text-on-graphite [--focus-color:var(--color-on-graphite)] lg:pt-12 lg:pb-16" id="board" aria-labelledby="board-title" data-board-preview>
+        <div class="wrap grid gap-x-12 gap-y-6 lg:grid-cols-12 lg:gap-y-8">
+          <div class="lg:col-span-7 lg:row-start-1">
+            <h1 class="text-h1 motion-safe:animate-hero-in" id="board-title">Join the line before you leave home</h1>
+            <p class="mt-4 max-w-measure text-lg text-on-graphite-muted motion-safe:animate-hero-in motion-safe:[animation-delay:70ms]">Three bays in Subangdaku, Mandaue City, for cars and motorcycles. See who’s in them, then join by plate number.</p>
+          </div>
+
+          <div class="wait-sign motion-safe:animate-hero-in motion-safe:[animation-delay:140ms] lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:self-end" data-wait-sign data-enhanced data-msg-yard="{busy} of 3 bays busy, {waiting} in line" data-msg-time="It’s {time} in Mandaue" data-msg-no-wait="No wait">
+            <div class="wait-sign__states">
+              <!-- Phones: the figure beside its details, so the bays start on the first screen; from lg, stacked -->
+              <div data-when="open">
+                <p class="flex items-center gap-2 text-sm text-on-graphite-muted"><i data-icon="timer" class="size-4"></i>Wait to join now</p>
+                <div class="mt-1 flex flex-wrap items-end gap-x-5 gap-y-2 lg:block">
+                  <p class="num stretch-display text-[clamp(3rem,2.2rem+3vw,4.5rem)] leading-none font-bold"><span data-wait-number>25</span> <span data-wait-unit>min</span></p>
+                  <div class="grid gap-1 text-sm lg:mt-3">
+                    <p data-wait-yard>3 of 3 bays busy, 3 in line</p>
+                    <p class="flex items-center gap-2"><span class="size-2 rounded-full bg-success-on-graphite" aria-hidden="true"></span>Open until 8:00 PM</p>
+                  </div>
+                </div>
+              </div>
+              <div data-when="closed">
+                <p class="flex items-center gap-2 text-sm text-on-graphite-muted"><i data-icon="clock" class="size-4"></i>Closed now</p>
+                <div class="mt-1 flex flex-wrap items-end gap-x-5 gap-y-2 lg:block">
+                  <p class="num stretch-display text-[clamp(3rem,2.2rem+3vw,4.5rem)] leading-none font-bold">7:00 AM</p>
+                  <div class="grid gap-1 text-sm lg:mt-3">
+                    <p>The bays open then, every day.</p>
+                    <p class="text-on-graphite-muted" data-wait-clock></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-lg lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:self-end" data-fallback>Open every day, 7:00 AM to 8:00 PM.</p>
+
+          <!-- One join form: this strip hands the plate to the walk-in form on the line page (home/join-handoff.ts) -->
+          <div class="grid gap-4 rounded-sm bg-graphite-raised p-4 sm:p-5 lg:col-span-12 lg:row-start-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-end lg:gap-x-12">
+            <p data-fallback><a class="inline-flex min-h-12 items-center justify-center rounded-sm bg-accent px-6 text-md font-semibold text-accent-ink no-underline transition-colors hover:bg-accent-hover" href="/bayline/visit/">Join the line</a></p>
+            <form class="grid gap-1" action="/bayline/visit/" novalidate data-enhanced data-join-handoff>
+              <label class="font-semibold" for="home-plate">Plate number</label>
+              <span class="text-sm text-on-graphite-muted" id="home-plate-hint">As printed, like NBC 1234 or 123 ABC</span>
+              <span class="mt-1 flex flex-wrap gap-2">
+                <input class="num min-h-12 w-40 min-w-0 flex-1 rounded-plate border-[1.5px] border-ink bg-canvas px-3 text-lg tracking-plate text-ink uppercase sm:max-w-[18rem]" id="home-plate" name="plate" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="24" aria-describedby="home-plate-hint" />
+                <button class="inline-flex min-h-12 items-center justify-center rounded-sm bg-accent px-6 text-md font-semibold text-accent-ink transition-colors hover:bg-accent-hover active:translate-y-px" type="submit">Join the line</button>
+              </span>
+            </form>
+            <p class="text-sm text-on-graphite-muted">Sample board. Bayline is a concept car wash: these plates are made up, and joining holds no bay and sends no text. <a class="font-semibold text-on-graphite underline underline-offset-4" href="/bayline/terms/#demonstration" data-concept>About this site</a></p>
+          </div>
+
+          <div class="lg:col-span-8 lg:row-start-2" data-enhanced>
+            <h2 class="sr-only">The bays now</h2>
+            <!-- @include bays -->
+          </div>
+          <div class="lg:col-span-4 lg:row-start-2" data-enhanced>
+            <!-- @include line -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad" id="prices" aria-labelledby="prices-title">
+        <div class="wrap">
+          <div class="grid gap-x-16 gap-y-4 lg:grid-cols-12 lg:items-end">
+            <h2 class="text-h2 lg:col-span-5" id="prices-title">Priced for what you drive</h2>
+            <p class="max-w-measure text-lg text-muted lg:col-span-6 lg:col-start-7">Four sizes, one list, so you know the total before you set off. Every job starts with a foam wash, a rinse and a hand dry.</p>
+          </div>
+          <div class="mt-10 overflow-x-auto">
+            <table class="price-table" data-home-prices>
+              <caption class="sr-only">Prices in pesos, by service and vehicle size</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="w-[32%] md:w-[30%]">Service</th>
+                  <th scope="col" class="text-center align-bottom max-md:px-1" data-v="small"><img class="mx-auto aspect-[4/3] w-full max-w-[12rem] object-contain object-bottom" src="/photos/vehicle-small-sedan-400.webp" srcset="/photos/vehicle-small-sedan-400.webp 400w, /photos/vehicle-small-sedan-800.webp 800w" sizes="(min-width: 80rem) 12rem, (min-width: 48rem) 16vw, 15vw" width="800" height="600" alt="" loading="lazy" decoding="async" /><span class="vehicle-head__name mt-2 max-md:text-xs max-md:[font-stretch:75%]">Small</span></th>
+                  <th scope="col" class="text-center align-bottom max-md:px-1" data-v="medium"><img class="mx-auto aspect-[4/3] w-full max-w-[12rem] object-contain object-bottom" src="/photos/vehicle-medium-suv-400.webp" srcset="/photos/vehicle-medium-suv-400.webp 400w, /photos/vehicle-medium-suv-800.webp 800w" sizes="(min-width: 80rem) 12rem, (min-width: 48rem) 16vw, 15vw" width="800" height="600" alt="" loading="lazy" decoding="async" /><span class="vehicle-head__name mt-2 max-md:text-xs max-md:[font-stretch:75%]">Medium</span></th>
+                  <th scope="col" class="text-center align-bottom max-md:px-1" data-v="large"><img class="mx-auto aspect-[4/3] w-full max-w-[12rem] object-contain object-bottom" src="/photos/vehicle-large-pickup-400.webp" srcset="/photos/vehicle-large-pickup-400.webp 400w, /photos/vehicle-large-pickup-800.webp 800w" sizes="(min-width: 80rem) 12rem, (min-width: 48rem) 16vw, 15vw" width="800" height="600" alt="" loading="lazy" decoding="async" /><span class="vehicle-head__name mt-2 max-md:text-xs max-md:[font-stretch:75%]">Large</span></th>
+                  <th scope="col" class="text-center align-bottom max-md:px-1" data-v="motorcycle"><img class="mx-auto aspect-[4/3] w-full max-w-[12rem] object-contain object-bottom origin-bottom scale-[0.8]" src="/photos/vehicle-motorcycle-scooter-400.webp" srcset="/photos/vehicle-motorcycle-scooter-400.webp 400w, /photos/vehicle-motorcycle-scooter-800.webp 800w" sizes="(min-width: 80rem) 12rem, (min-width: 48rem) 16vw, 15vw" width="800" height="600" alt="" loading="lazy" decoding="async" /><span class="vehicle-head__name mt-2 max-md:text-xs max-md:[font-stretch:75%]">Motorcycle</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr data-service="express">
+                    <th scope="row"><span class="block font-semibold max-md:text-[0.9375rem] md:text-lg">Express wash</span><span class="num text-sm text-muted" data-time>20 min</span></th>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="small">₱180</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="medium">₱220</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="large">₱260</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="motorcycle">₱100</td>
+                  </tr>
+                  <tr data-service="wash-vacuum">
+                    <th scope="row"><span class="block font-semibold max-md:text-[0.9375rem] md:text-lg">Wash and vacuum</span><span class="num text-sm text-muted" data-time>35 min</span></th>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="small">₱280</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="medium">₱330</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="large">₱380</td>
+                    <td class="price num price--na text-center max-md:px-1 max-md:whitespace-normal" data-v="motorcycle">Not offered</td>
+                  </tr>
+                  <tr data-service="wash-wax">
+                    <th scope="row"><span class="block font-semibold max-md:text-[0.9375rem] md:text-lg">Wash and hand wax</span><span class="num text-sm text-muted" data-time>50 min</span></th>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="small">₱480</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="medium">₱560</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="large">₱640</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="motorcycle">₱220</td>
+                  </tr>
+                  <tr data-service="engine">
+                    <th scope="row"><span class="block font-semibold max-md:text-[0.9375rem] md:text-lg">Engine wash</span><span class="num text-sm text-muted" data-time>30 min</span></th>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="small">₱400</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="medium">₱450</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="large">₱500</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="motorcycle">₱150</td>
+                  </tr>
+                  <tr data-service="glass">
+                    <th scope="row"><span class="block font-semibold max-md:text-[0.9375rem] md:text-lg">Glass and watermark removal</span><span class="num text-sm text-muted" data-time>1 h 30 min</span></th>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="small">₱900</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="medium">₱1,100</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="large">₱1,300</td>
+                    <td class="price num price--na text-center max-md:px-1 max-md:whitespace-normal" data-v="motorcycle">Not offered</td>
+                  </tr>
+                  <tr data-service="interior">
+                    <th scope="row"><span class="block font-semibold max-md:text-[0.9375rem] md:text-lg">Interior deep clean</span><span class="num text-sm text-muted" data-time>3 h</span></th>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="small">₱1,800</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="medium">₱2,200</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="large">₱2,600</td>
+                    <td class="price num price--na text-center max-md:px-1 max-md:whitespace-normal" data-v="motorcycle">Not offered</td>
+                  </tr>
+                  <tr data-service="ceramic">
+                    <th scope="row"><span class="block font-semibold max-md:text-[0.9375rem] md:text-lg">Ceramic coating</span><span class="num text-sm text-muted" data-time>1 day</span><span class="block text-sm font-semibold">By appointment</span></th>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="small">₱12,000</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="medium">₱15,000</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="large">₱18,000</td>
+                    <td class="price num text-center max-md:px-1 max-md:text-sm" data-v="motorcycle">₱4,500</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+          <a class="mt-6 inline-flex min-h-11 items-center font-semibold underline underline-offset-4" href="/bayline/services/">Add up your wash on the price list</a>
+        </div>
+      </section>
+
+      <section class="border-y border-line bg-surface" id="packs" aria-labelledby="packs-title">
+        <div class="wrap grid gap-x-12 gap-y-4 py-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-center lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)_auto]">
+          <h2 class="text-h2 md:col-span-2 lg:col-span-1" id="packs-title">Twice a week, for less</h2>
+          <div>
+            <p class="flex flex-wrap items-baseline gap-x-3"><span class="num text-total font-bold" data-teaser="express-8">₱1,220</span><span class="text-lg">a month, small car</span></p>
+            <p class="mt-1 text-muted">Express 8: eight express washes a month for one plate. You save <span class="num text-ink" data-save="express-8">₱220</span> against paying each time.</p>
+          </div>
+          <a class="inline-flex min-h-12 items-center justify-center justify-self-start rounded-sm border-[1.5px] border-ink px-6 text-md font-semibold text-ink no-underline transition-colors hover:bg-canvas active:translate-y-px" href="/bayline/plans/">Compare wash packs</a>
+        </div>
+      </section>
+
+      <section class="section-pad" id="where" aria-labelledby="where-title">
+        <div class="wrap grid items-center gap-x-16 gap-y-8 md:grid-cols-12">
+          <picture class="block md:col-span-7">
+            <source media="(min-width: 48rem)" srcset="/photos/hero-foam-wash-wide-800.webp 800w, /photos/hero-foam-wash-wide-1600.webp 1600w" sizes="(min-width: 80rem) 44rem, 55vw" width="1600" height="900" />
+            <img class="aspect-[4/3] w-full bg-surface object-cover md:aspect-[16/9]" src="/photos/hero-foam-wash-800.webp" srcset="/photos/hero-foam-wash-800.webp 800w, /photos/hero-foam-wash-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="A champagne sedan covered in soap foam in a wash bay" loading="lazy" decoding="async" />
+          </picture>
+          <div class="md:col-span-5" data-hours data-msg-open="Open now, until 8:00 PM" data-msg-closed-today="Closed now, opens today at 7:00 AM" data-msg-closed-tomorrow="Closed now, opens tomorrow at 7:00 AM" data-msg-time="It’s {time} in Mandaue">
+            <h2 class="text-h2" id="where-title">Subangdaku, Mandaue City</h2>
+            <p class="mt-4 max-w-measure text-lg text-muted">Three bays for cars and motorcycles. Join the line from home, then come over when your bay is close.</p>
+            <p class="num mt-6 flex items-center gap-2 border-t border-line pt-4 text-h3"><i data-icon="clock" class="size-5"></i>Every day, 7:00 AM to 8:00 PM</p>
+            <p class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1" data-enhanced data-open-line data-open="true"><span class="flex items-center gap-2 font-semibold"><span class="size-2 rounded-full bg-line-strong in-data-[open=true]:bg-success" aria-hidden="true"></span><span data-open-pill>Open now, until 8:00 PM</span></span><span class="text-sm text-muted" data-hours-clock></span></p>
+            <a class="mt-5 inline-flex min-h-11 items-center font-semibold underline underline-offset-4" href="/bayline/location/">Map, hours and common questions</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer -->
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prices by vehicle: Bayline car wash, Mandaue City</title>
+    <meta name="description" content="Sample prices for every wash and detailing job at Bayline, by vehicle size, with a running total and the time each job takes." />
+    <link rel="canonical" href="%VITE_SITE_URL%services/" />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="Prices by vehicle: Bayline car wash, Mandaue City" />
+    <meta property="og:description" content="Sample prices for every wash and detailing job at Bayline, by vehicle size, with a running total and the time each job takes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%VITE_SITE_URL%services/" />
+    <meta property="og:image" content="%VITE_SITE_URL%og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bayline, a concept car wash in Subangdaku, Mandaue City: a soaped sedan in a wash bay and the current wait for a walk-in." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prices by vehicle: Bayline car wash, Mandaue City" />
+    <meta name="twitter:description" content="Sample prices for every wash and detailing job at Bayline, by vehicle size, with a running total and the time each job takes." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%og.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="oklch(1 0 0)" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Before first paint: .js for the enhanced layout, and data-signed-in so the header says Account, not Sign in -->
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('bayline.session'))document.documentElement.dataset.signedIn=''}catch(e){}</script>
+    <script type="module" src="/main.ts"></script>
+  </head>
+  <body>
+    <a class="absolute top-2 left-4 z-50 -translate-y-[200%] rounded-sm bg-ink px-4 py-2 font-semibold text-canvas focus-visible:translate-y-0" href="#main">Skip to content</a>
+
+    <!-- @include header current="services" -->
+
+    <main id="main">
+      <section class="section-pad" id="prices" aria-labelledby="prices-title">
+        <div class="wrap">
+          <div class="max-w-text">
+            <h1 class="text-h1" id="prices-title">Prices by vehicle</h1>
+            <p class="mt-4 text-lg text-muted">Pick your vehicle and tick what you need: the total and the time add up as you go. These are starting prices. Add them to your basket to book a time, or pay at the bay when you walk in.</p>
+          </div>
+
+          <div class="picker mt-8 grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center" data-price-picker data-vehicle="small" data-msg-nothing="Tick a service to see the total." data-msg-left-out="Not counted: {services}. Not for motorcycles." data-msg-total-label="Total for a {vehicle}" data-msg-added="Added to your basket: {services} for a {vehicle}." data-msg-add-nothing="Tick a service first, then add it to your basket." data-msg-basket-blocked="This browser is blocking the site’s storage, so the basket can’t keep it. Join the line or book a time instead.">
+            <fieldset class="md:col-span-2" data-enhanced>
+              <legend class="mb-3 font-semibold">Your vehicle</legend>
+              <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
+                <label class="group relative flex min-h-14 cursor-pointer items-center gap-3 rounded-sm border-[1.5px] border-line-strong bg-canvas px-3 py-2 transition-colors hover:border-ink has-checked:border-ink has-checked:bg-ink has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"><input class="absolute inset-0 m-0 cursor-pointer opacity-0" type="radio" name="picker-vehicle" value="small" checked /><i data-icon="car-profile" class="size-6"></i><span class="grid min-w-0"><span class="vehicle-option__name text-md font-semibold">Small</span><span class="text-xs text-muted group-has-checked:text-on-graphite-muted">Vios, City, Wigo</span></span></label>
+                <label class="group relative flex min-h-14 cursor-pointer items-center gap-3 rounded-sm border-[1.5px] border-line-strong bg-canvas px-3 py-2 transition-colors hover:border-ink has-checked:border-ink has-checked:bg-ink has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"><input class="absolute inset-0 m-0 cursor-pointer opacity-0" type="radio" name="picker-vehicle" value="medium" /><i data-icon="jeep" class="size-6"></i><span class="grid min-w-0"><span class="vehicle-option__name text-md font-semibold">Medium</span><span class="text-xs text-muted group-has-checked:text-on-graphite-muted">Innova, Fortuner, CR-V</span></span></label>
+                <label class="group relative flex min-h-14 cursor-pointer items-center gap-3 rounded-sm border-[1.5px] border-line-strong bg-canvas px-3 py-2 transition-colors hover:border-ink has-checked:border-ink has-checked:bg-ink has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"><input class="absolute inset-0 m-0 cursor-pointer opacity-0" type="radio" name="picker-vehicle" value="large" /><i data-icon="van" class="size-6"></i><span class="grid min-w-0"><span class="vehicle-option__name text-md font-semibold">Large</span><span class="text-xs text-muted group-has-checked:text-on-graphite-muted">Hilux, Ranger, Urvan</span></span></label>
+                <label class="group relative flex min-h-14 cursor-pointer items-center gap-3 rounded-sm border-[1.5px] border-line-strong bg-canvas px-3 py-2 transition-colors hover:border-ink has-checked:border-ink has-checked:bg-ink has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"><input class="absolute inset-0 m-0 cursor-pointer opacity-0" type="radio" name="picker-vehicle" value="motorcycle" /><i data-icon="scooter" class="size-6"></i><span class="grid min-w-0"><span class="vehicle-option__name text-md font-semibold">Motorcycle</span><span class="text-xs text-muted group-has-checked:text-on-graphite-muted">Click, NMAX, Mio</span></span></label>
+              </div>
+            </fieldset>
+
+            <div class="grid gap-6 md:contents">
+              <div class="overflow-x-auto md:col-span-2">
+                <table class="price-table">
+                  <caption class="sr-only">Sample prices in pesos, by service and vehicle</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Service</th>
+                      <th scope="col">Time</th>
+                      <th scope="col" data-v="small"><span class="vehicle-head__name">Small</span><span class="vehicle-head__hint">Vios, City, Wigo</span></th>
+                      <th scope="col" data-v="medium"><span class="vehicle-head__name">Medium</span><span class="vehicle-head__hint">Innova, Fortuner, CR-V</span></th>
+                      <th scope="col" data-v="large"><span class="vehicle-head__name">Large</span><span class="vehicle-head__hint">Hilux, Ranger, Urvan</span></th>
+                      <th scope="col" data-v="motorcycle"><span class="vehicle-head__name">Motorcycle</span><span class="vehicle-head__hint">Click, NMAX, Mio</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-service="express">
+                      <th scope="row">
+                        <label class="service"><span class="check" data-enhanced><input type="checkbox" name="service" value="express" checked /><i data-icon="check"></i></span><span class="service__name">Express wash</span></label>
+                        <span class="service__desc">Foam wash, rinse and hand dry, tires and rims included.</span>
+                      </th>
+                      <td class="time num">20 min</td>
+                      <td class="price num" data-v="small">₱180</td>
+                      <td class="price num" data-v="medium">₱220</td>
+                      <td class="price num" data-v="large">₱260</td>
+                      <td class="price num" data-v="motorcycle">₱100</td>
+                    </tr>
+                    <tr data-service="wash-vacuum">
+                      <th scope="row">
+                        <label class="service"><span class="check" data-enhanced><input type="checkbox" name="service" value="wash-vacuum" /><i data-icon="check"></i></span><span class="service__name">Wash and vacuum</span></label>
+                        <span class="service__desc">The express wash plus a vacuum of the seats, mats and trunk.</span>
+                        <span class="service__reason" id="reason-wash-vacuum" data-reason>Not for motorcycles</span>
+                      </th>
+                      <td class="time num">35 min</td>
+                      <td class="price num" data-v="small">₱280</td>
+                      <td class="price num" data-v="medium">₱330</td>
+                      <td class="price num" data-v="large">₱380</td>
+                      <td class="price num price--na" data-v="motorcycle">Not offered</td>
+                    </tr>
+                    <tr data-service="wash-wax">
+                      <th scope="row">
+                        <label class="service"><span class="check" data-enhanced><input type="checkbox" name="service" value="wash-wax" /><i data-icon="check"></i></span><span class="service__name">Wash and hand wax</span></label>
+                        <span class="service__desc">A full wash, then wax put on and buffed by hand.</span>
+                      </th>
+                      <td class="time num">50 min</td>
+                      <td class="price num" data-v="small">₱480</td>
+                      <td class="price num" data-v="medium">₱560</td>
+                      <td class="price num" data-v="large">₱640</td>
+                      <td class="price num" data-v="motorcycle">₱220</td>
+                    </tr>
+                    <tr data-service="engine">
+                      <th scope="row">
+                        <label class="service"><span class="check" data-enhanced><input type="checkbox" name="service" value="engine" /><i data-icon="check"></i></span><span class="service__name">Engine wash</span></label>
+                        <span class="service__desc">Degrease and rinse the engine bay, with the electrics covered first.</span>
+                      </th>
+                      <td class="time num">30 min</td>
+                      <td class="price num" data-v="small">₱400</td>
+                      <td class="price num" data-v="medium">₱450</td>
+                      <td class="price num" data-v="large">₱500</td>
+                      <td class="price num" data-v="motorcycle">₱150</td>
+                    </tr>
+                    <tr data-service="glass">
+                      <th scope="row">
+                        <label class="service"><span class="check" data-enhanced><input type="checkbox" name="service" value="glass" /><i data-icon="check"></i></span><span class="service__name">Glass and watermark removal</span></label>
+                        <span class="service__desc">Water spots polished off every window and mirror.</span>
+                        <span class="service__reason" id="reason-glass" data-reason>Not for motorcycles</span>
+                      </th>
+                      <td class="time num">1 h 30 min</td>
+                      <td class="price num" data-v="small">₱900</td>
+                      <td class="price num" data-v="medium">₱1,100</td>
+                      <td class="price num" data-v="large">₱1,300</td>
+                      <td class="price num price--na" data-v="motorcycle">Not offered</td>
+                    </tr>
+                    <tr data-service="interior">
+                      <th scope="row">
+                        <label class="service"><span class="check" data-enhanced><input type="checkbox" name="service" value="interior" /><i data-icon="check"></i></span><span class="service__name">Interior deep clean</span></label>
+                        <span class="service__desc">Seats, carpets, door panels and headliner shampooed and dried.</span>
+                        <span class="service__reason" id="reason-interior" data-reason>Not for motorcycles</span>
+                      </th>
+                      <td class="time num">3 h</td>
+                      <td class="price num" data-v="small">₱1,800</td>
+                      <td class="price num" data-v="medium">₱2,200</td>
+                      <td class="price num" data-v="large">₱2,600</td>
+                      <td class="price num price--na" data-v="motorcycle">Not offered</td>
+                    </tr>
+                    <tr data-service="ceramic">
+                      <th scope="row">
+                        <label class="service"><span class="check" data-enhanced><input type="checkbox" name="service" value="ceramic" /><i data-icon="check"></i></span><span class="service__name">Ceramic coating</span></label>
+                        <span class="service__desc">Paint cleaned, polished and coated. Leave it with us for the day.</span>
+                        <span class="service__tag">By appointment</span>
+                      </th>
+                      <td class="time num">1 day</td>
+                      <td class="price num" data-v="small">₱12,000</td>
+                      <td class="price num" data-v="medium">₱15,000</td>
+                      <td class="price num" data-v="large">₱18,000</td>
+                      <td class="price num" data-v="motorcycle">₱4,500</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-x-8 gap-y-3 max-md:sticky max-md:bottom-0 max-md:z-20 max-md:-mx-(--gutter) max-md:bg-graphite max-md:px-(--gutter) max-md:py-3 max-md:text-on-graphite max-md:[--focus-color:var(--color-on-graphite)] md:col-span-2 md:border-t-2 md:border-ink md:pt-5" data-enhanced>
+                <div class="min-w-0 flex-1" aria-live="polite" aria-atomic="true">
+                  <p class="text-sm text-muted max-md:text-on-graphite-muted" data-total-label>Total for a small car</p>
+                  <p class="flex flex-wrap items-baseline gap-x-3"><span class="num text-total font-bold" data-total>₱180</span><span class="num text-lg" data-time>20 min</span></p>
+                  <p class="mt-1 text-sm text-muted empty:hidden max-md:text-on-graphite-muted" data-total-note></p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                  <a class="inline-flex min-h-11 items-center justify-center rounded-sm bg-accent px-5 text-md font-semibold text-accent-ink no-underline transition-colors hover:bg-accent-hover active:translate-y-px md:min-h-12 md:px-6" href="/bayline/visit/" data-carry-selection><span class="md:hidden">Join the line</span><span class="max-md:hidden">Join the line with these</span></a>
+                  <a class="inline-flex min-h-12 items-center justify-center rounded-sm border-[1.5px] border-ink bg-canvas px-6 text-md font-semibold text-ink no-underline transition-colors hover:bg-surface active:translate-y-px max-md:hidden" href="/bayline/visit/#book" data-carry-selection>Book a time</a>
+                  <button class="inline-flex size-11 items-center justify-center gap-2 rounded-sm border-[1.5px] border-on-graphite text-md font-semibold text-on-graphite transition-colors hover:bg-graphite-raised active:translate-y-px md:size-auto md:min-h-12 md:border-ink md:bg-canvas md:px-6 md:text-ink md:hover:bg-surface" type="button" data-add-wash><i data-icon="basket" class="size-5"></i><span class="max-md:sr-only">Add to basket</span></button>
+                </div>
+                <p class="basis-full text-sm font-semibold empty:hidden" role="status" data-basket-status></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer -->
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join the line or book a time: Bayline, Mandaue City</title>
+    <meta name="description" content="Join Bayline’s walk-in line by plate number and watch the three bays, or book a start time up to seven days ahead." />
+    <link rel="canonical" href="%VITE_SITE_URL%visit/" />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="Join the line or book a time: Bayline, Mandaue City" />
+    <meta property="og:description" content="Join Bayline’s walk-in line by plate number and watch the three bays, or book a start time up to seven days ahead." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%VITE_SITE_URL%visit/" />
+    <meta property="og:image" content="%VITE_SITE_URL%og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bayline, a concept car wash in Subangdaku, Mandaue City: a soaped sedan in a wash bay and the current wait for a walk-in." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Join the line or book a time: Bayline, Mandaue City" />
+    <meta name="twitter:description" content="Join Bayline’s walk-in line by plate number and watch the three bays, or book a start time up to seven days ahead." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%og.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="oklch(1 0 0)" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Before first paint: .js, data-signed-in (Account, not Sign in), and the Book a time panel for #book -->
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('bayline.session'))document.documentElement.dataset.signedIn=''}catch(e){}if(location.hash==='#book')document.documentElement.dataset.visit='schedule'</script>
+    <script type="module" src="/main.ts"></script>
+  </head>
+  <body>
+    <a class="absolute top-2 left-4 z-50 -translate-y-[200%] rounded-sm bg-ink px-4 py-2 font-semibold text-canvas focus-visible:translate-y-0" href="#main">Skip to content</a>
+
+    <!-- @include header current="visit" -->
+
+    <main id="main">
+      <section class="section-pad bg-graphite text-on-graphite [--focus-color:var(--color-on-graphite)]" id="line" aria-labelledby="line-title" data-msg-selection="{services} for a {vehicle}, {duration}, {price}">
+        <div class="wrap">
+          <div class="max-w-text">
+            <h1 class="text-h1" id="line-title">Join the line or book a time</h1>
+            <p class="mt-4 text-lg text-on-graphite-muted">Walk in: give your plate number and wait wherever you like; you get a text when a bay opens. Or book a start time up to seven days ahead.</p>
+          </div>
+
+          <div class="mt-8 flex gap-6 border-b border-rule-on-graphite" role="tablist" aria-label="How you want to come in" data-visit-switch data-enhanced>
+            <button class="-mb-px min-h-11 border-b-2 border-transparent px-1 text-md font-semibold text-on-graphite-muted transition-colors hover:text-on-graphite aria-selected:border-on-graphite aria-selected:text-on-graphite" type="button" role="tab" id="tab-walk-in" aria-controls="panel-walk-in" aria-selected="true" data-mode="walk-in">Walk in</button>
+            <button class="-mb-px inline-flex min-h-11 items-center gap-2 border-b-2 border-transparent px-1 text-md font-semibold text-on-graphite-muted transition-colors hover:text-on-graphite aria-selected:border-on-graphite aria-selected:text-on-graphite" type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="false" tabindex="-1" data-mode="schedule"><i data-icon="calendar-dots" class="size-5"></i>Book a time</button>
+          </div>
+          <!-- Outside both panels, so it shows on Walk in and on Book a time -->
+          <p class="mt-4 flex items-start gap-2 text-sm text-on-graphite-muted" data-board-caption data-enhanced><i data-icon="info" class="mt-0.5 size-4"></i><span>The bay board and the line show sample data, not a live feed: the sample line moves a minute every second once you join or press Play.</span></p>
+
+          <div
+            class="mt-8 transition-opacity duration-150 starting:opacity-0"
+            id="panel-walk-in"
+            role="tabpanel"
+            aria-labelledby="tab-walk-in"
+            data-bay-board
+            data-msg-plate-empty="Type your plate number to join the line."
+            data-msg-plate-invalid="That doesn’t look like a plate number. Type it as printed, like NBC 1234."
+            data-msg-plate-taken="{plate} is already in line."
+            data-msg-before-join="Join now and a bay frees up for you in about {minutes} min."
+            data-msg-before-join-free="A bay is free now. Join and pull straight in."
+            data-msg-joined="You’re {position} in line as {plate}. A bay frees up in about {minutes} min."
+            data-msg-joined-free="You’re in line as {plate}, and a bay is free now."
+            data-msg-waiting="You’re {position} in line. About {minutes} min to go."
+            data-msg-next="You’re next. Your bay is opening now."
+            data-msg-turn="Bay {bay} is ready for {plate}"
+            data-msg-turn-status="Bay {bay} is ready for {plate}. Pull in when you get here."
+            data-msg-washing="{plate} is in Bay {bay}, {minutes} min left."
+            data-msg-done="{plate} is clean and ready. Pay at the bay by GCash, Maya, card or cash."
+            data-msg-play="Play"
+            data-msg-pause="Pause"
+            data-msg-closed="It’s {time} in Mandaue, so we’re closed. The board runs a sample afternoon you can still try."
+            data-msg-too-late="That would finish after we close at 8:00 PM. Book it for another day instead."
+            data-msg-appointment="Ceramic coating is by appointment. Switch to Book a time to book it."
+            data-msg-no-service="Pick a service in the price list first."
+          >
+            <h2 class="sr-only">Walk in</h2>
+            <p class="max-w-text text-lg text-on-graphite-muted" data-fallback>Walk-ins are taken from 7:00 AM to 8:00 PM, every day. Give your plate number and you get a text when a bay is free.</p>
+
+            <div class="grid gap-8 xl:grid-cols-12" data-enhanced>
+              <div class="max-xl:order-last xl:col-span-7">
+                <!-- @include bays -->
+
+                <div class="mt-8">
+                  <!-- @include line -->
+                </div>
+              </div>
+
+              <!-- On phones the form comes first and the board after it: the person arriving is ready to join -->
+              <div class="grid content-start gap-6 max-xl:order-first xl:col-span-5">
+                <p class="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm bg-graphite-raised px-4 py-3"><span class="basis-full text-xs text-on-graphite-muted">Your wash</span><span class="font-semibold" data-selection>Express wash for a small car, 20 min, ₱180</span><a class="text-sm font-semibold text-on-graphite" href="/bayline/services/" data-carry-selection>Change</a></p>
+
+                <form class="grid gap-4" data-join-form novalidate>
+                  <div class="grid gap-4 sm:grid-cols-[minmax(0,1fr)_10rem]">
+                    <div class="grid gap-1">
+                      <label class="font-semibold" for="walk-in-plate">Plate number</label>
+                      <span class="text-sm text-on-graphite-muted" id="walk-in-plate-hint">As printed, like NBC 1234 or 123 ABC</span>
+                      <input class="num mt-1 min-h-12 w-full min-w-0 rounded-plate border-[1.5px] border-ink bg-canvas px-3 text-lg tracking-plate text-ink uppercase aria-invalid:outline-2 aria-invalid:outline-danger-on-graphite" id="walk-in-plate" name="plate" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="24" aria-describedby="walk-in-plate-hint walk-in-plate-error" />
+                    </div>
+                    <div class="grid content-end gap-1">
+                      <label class="font-semibold" for="walk-in-size">Size</label>
+                      <span class="relative mt-1 block">
+                        <select class="min-h-12 w-full appearance-none rounded-sm border-[1.5px] border-on-graphite-muted bg-graphite px-3 pr-9 text-md text-on-graphite" id="walk-in-size" name="vehicle" data-size-select>
+                          <option value="small">Small</option>
+                          <option value="medium">Medium</option>
+                          <option value="large">Large</option>
+                          <option value="motorcycle">Motorcycle</option>
+                        </select>
+                        <i data-icon="caret-down" class="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <p class="flex items-start gap-2 text-sm font-semibold text-danger-on-graphite" id="walk-in-plate-error" data-field-error hidden><i data-icon="warning-circle" data-weight="fill" class="mt-px size-5"></i><span data-error-text></span></p>
+                  <button class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-6 text-md font-semibold text-accent-ink transition-colors hover:bg-accent-hover active:translate-y-px" type="submit">Join the line</button>
+                </form>
+
+                <div class="group rounded-sm border-[1.5px] border-rule-on-graphite px-4 py-3 data-[tone=ready]:border-success-on-graphite data-[tone=ready]:text-success-on-graphite" tabindex="-1" data-walk-in-status>
+                  <p class="flex items-start gap-2 font-semibold"><i data-icon="check-circle" data-weight="fill" class="mt-0.5 hidden size-5 group-data-[tone=ready]:block"></i><span class="min-h-[3.1em]" data-status-main>Join now and a bay frees up for you in about 25 min.</span></p>
+                  <p class="mt-1 text-sm text-on-graphite-muted" data-status-note hidden>Demo: nothing was sent, so no text will come.</p>
+                </div>
+                <p class="sr-only" aria-live="polite" data-walk-in-live></p>
+
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <button class="group inline-flex min-h-11 items-center gap-2 rounded-sm border-[1.5px] border-on-graphite px-4 text-md font-semibold text-on-graphite transition-colors hover:bg-graphite-raised" type="button" data-clock data-running="false"><i data-icon="play" class="size-5 group-data-[running=true]:hidden"></i><i data-icon="pause" class="hidden size-5 group-data-[running=true]:block"></i><span data-clock-label>Play</span></button>
+                  <button class="min-h-11 px-1 text-md font-semibold text-on-graphite-muted underline underline-offset-4 transition-colors hover:text-on-graphite" type="button" data-reset>Reset</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-8 transition-opacity duration-150 starting:opacity-0"
+            id="panel-schedule"
+            role="tabpanel"
+            aria-labelledby="tab-schedule"
+            data-schedule
+            data-msg-today="Today"
+            data-msg-tomorrow="Tomorrow"
+            data-msg-taken="Taken"
+            data-msg-past="Past"
+            data-msg-no-times="No times left on this day. Pick another day."
+            data-msg-too-long="That’s more than one day of work. Book the ceramic coating on its own."
+            data-msg-full-day="Ceramic coating is a full-day job: drop off at 8:00 AM, ready by {time}."
+            data-msg-pick-time="Pick a start time first."
+            data-msg-time-passed="That time has passed. Pick another one."
+            data-msg-confirm="Book this time"
+            data-msg-confirm-time="Book {time}"
+            data-msg-confirmed="Booked: {day} at {time} for {plate}, paying by {payment}. {selection}. This is a demonstration site: nothing was sent and nothing was charged."
+            data-msg-not-saved="This browser is blocking the site’s storage, so the booking won’t show in your account."
+            data-msg-pick-payment="Choose how you’ll pay: GCash, Maya or card."
+            data-msg-plate-empty="Type your plate number to book."
+            data-msg-plate-invalid="That doesn’t look like a plate number. Type it as printed, like NBC 1234."
+            data-msg-no-service="Pick a service in the price list first."
+            data-msg-duplicate="{plate} is already booked for {time} on {day}. Pick another time."
+            data-msg-slot-booked="You already have a booking at {time} on {day}. Pick another time."
+            data-msg-pack-day="{plate} is on {plan}, and a pack covers one wash a day. It already has a booking on {day}."
+            data-msg-pack-none="{plate}’s {plan} has no washes left in {month}. This wash is charged at the bay price, {price}."
+            data-msg-pack-later="{plate}’s {plan} starts on {date}. This wash is charged at the bay price, {price}."
+            data-msg-pack-other="{plan} doesn’t include this wash. It’s charged at the bay price, {price}."
+          >
+            <h2 class="sr-only">Book a time</h2>
+            <p class="max-w-text text-lg text-on-graphite-muted" data-fallback>Book up to seven days ahead, for any start time from 7:00 AM that finishes by 8:00 PM. Ceramic coating starts at 8:00 AM.</p>
+
+            <form class="grid gap-8 xl:grid-cols-12" data-enhanced data-booking-form novalidate>
+              <div class="grid content-start gap-6 xl:col-span-7">
+                <fieldset>
+                  <legend class="mb-3 font-semibold">Day</legend>
+                  <div class="grid grid-cols-[repeat(auto-fill,minmax(4.25rem,1fr))] gap-2" data-days></div>
+                </fieldset>
+                <fieldset>
+                  <legend class="mb-3 font-semibold" id="slots-legend">Start time</legend>
+                  <div class="grid min-h-11 grid-cols-[repeat(auto-fill,minmax(5.5rem,1fr))] gap-2" data-slots></div>
+                  <p class="mt-3 text-sm text-on-graphite-muted empty:hidden" data-slots-note></p>
+                </fieldset>
+              </div>
+
+              <div class="grid content-start gap-6 xl:col-span-5">
+                <p class="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-sm bg-graphite-raised px-4 py-3"><span class="basis-full text-xs text-on-graphite-muted">Your wash</span><span class="font-semibold" data-selection>Express wash for a small car, 20 min, ₱180</span><a class="text-sm font-semibold text-on-graphite" href="/bayline/services/" data-carry-selection>Change</a></p>
+
+                <div class="field grid gap-1">
+                  <label class="font-semibold" for="schedule-plate">Plate number</label>
+                  <span class="text-sm text-on-graphite-muted" id="schedule-plate-hint">As printed, like NBC 1234 or 123 ABC</span>
+                  <input class="num mt-1 min-h-12 w-full min-w-0 rounded-plate border-[1.5px] border-ink bg-canvas px-3 text-lg tracking-plate text-ink uppercase aria-invalid:outline-2 aria-invalid:outline-danger-on-graphite" id="schedule-plate" name="plate" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="24" aria-describedby="schedule-plate-hint schedule-plate-error" />
+                  <p class="mt-2 flex items-start gap-2 text-sm font-semibold text-danger-on-graphite" id="schedule-plate-error" data-field-error hidden><i data-icon="warning-circle" data-weight="fill" class="mt-px size-5"></i><span data-error-text></span></p>
+                </div>
+
+                <fieldset aria-describedby="schedule-payment-note">
+                  <legend class="mb-3 font-semibold">Pay with</legend>
+                  <div class="grid grid-cols-3 gap-2">
+                    <label class="chip min-h-12 font-semibold"><input type="radio" name="payment" value="gcash" />GCash</label>
+                    <label class="chip min-h-12 font-semibold"><input type="radio" name="payment" value="maya" />Maya</label>
+                    <label class="chip min-h-12 font-semibold"><input type="radio" name="payment" value="card" />Card</label>
+                  </div>
+                  <p class="mt-2 text-sm text-on-graphite-muted" id="schedule-payment-note">You approve GCash and Maya in their app, and cards on your bank’s secure page.</p>
+                </fieldset>
+
+                <p class="flex items-start gap-2 text-sm font-semibold text-danger-on-graphite" role="alert" data-booking-error hidden><i data-icon="warning-circle" data-weight="fill" class="mt-px size-5"></i><span data-error-text></span></p>
+                <button class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-6 text-md font-semibold text-accent-ink transition-colors hover:bg-accent-hover active:translate-y-px" type="submit" data-confirm>Book this time</button>
+                <p class="text-sm text-on-graphite-muted">Bayline is a concept brand: booking here holds no time and charges nothing. <a class="font-semibold text-on-graphite underline underline-offset-4" href="/bayline/terms/#demonstration" data-concept>About this site</a></p>
+
+                <div class="flex items-start gap-2 rounded-sm border-[1.5px] border-success-on-graphite px-4 py-3 text-on-graphite" tabindex="-1" data-confirmation hidden><i data-icon="check-circle" data-weight="fill" class="mt-0.5 size-5 text-success-on-graphite"></i><span class="grid gap-1"><span class="font-semibold" data-confirmation-text></span><a class="inline-flex min-h-11 items-center justify-self-start text-sm font-semibold text-on-graphite underline underline-offset-4" href="/bayline/account/">Your bookings</a></span></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- A white strip closes the graphite band, so the band and the graphite footer never read as one block -->
+      <section class="section-pad bg-canvas" aria-labelledby="before-you-go-title">
+        <div class="wrap grid gap-x-16 gap-y-4 md:grid-cols-12">
+          <h2 class="text-h3 md:col-span-4" id="before-you-go-title">Before you drive over</h2>
+          <div class="md:col-span-8">
+            <p class="flex items-center gap-2 text-lg"><i data-icon="clock" class="size-5"></i><span class="num">Open every day, 7:00 AM to 8:00 PM</span></p>
+            <p class="mt-2 flex items-center gap-2 text-lg"><i data-icon="map-pin" class="size-5"></i>Subangdaku, Mandaue City</p>
+            <p class="mt-4 flex flex-wrap gap-x-6"><a class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4" href="/bayline/location/">Hours, location and FAQ</a><a class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4" href="/bayline/services/">Prices by vehicle</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer -->
+
+    <!-- A visual echo of the status line, which (with its live region) is what assistive tech reads -->
+    <div class="pointer-events-none fixed bottom-4 left-(--gutter) right-(--gutter) z-50 flex items-center gap-3 rounded-sm border-[1.5px] border-ink bg-canvas px-4 py-3 font-semibold text-ink transition duration-200 data-[edge=top]:top-[calc(var(--header)+0.75rem)] data-[edge=top]:bottom-auto data-[state=hidden]:translate-y-4 data-[state=hidden]:opacity-0 sm:right-auto sm:max-w-[28rem]" aria-hidden="true" data-state="hidden" data-toast><i data-icon="check-circle" data-weight="fill" class="size-5 text-success"></i><span data-toast-text></span></div>
+  </body>
+</html>

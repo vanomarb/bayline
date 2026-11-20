@@ -1,0 +1,59 @@
+    <header class="sticky top-0 z-40 border-b border-transparent bg-canvas transition-colors data-[scrolled]:border-line" data-header>
+      <div class="wrap relative flex h-16 items-center gap-1 sm:gap-2 lg:gap-8">
+        <a class="stretch-display inline-flex min-h-11 items-center text-[1.375rem] font-bold tracking-wordmark no-underline" href="%BASE_URL%" data-nav="home" aria-label="Bayline home">Bayline</a>
+        <!-- Below lg the menu dialog carries the Main navigation instead, so only one is ever exposed -->
+        <nav class="flex-1 max-lg:hidden" aria-label="Main">
+          <ul class="flex gap-1">
+            <li><a class="flex min-h-11 items-center px-3 font-medium no-underline decoration-2 underline-offset-[0.35em] hover:underline aria-[current=page]:underline" href="%BASE_URL%services/" data-nav="services">Prices</a></li>
+            <li><a class="flex min-h-11 items-center px-3 font-medium no-underline decoration-2 underline-offset-[0.35em] hover:underline aria-[current=page]:underline" href="%BASE_URL%plans/" data-nav="plans">Wash packs</a></li>
+            <li><a class="flex min-h-11 items-center px-3 font-medium no-underline decoration-2 underline-offset-[0.35em] hover:underline aria-[current=page]:underline" href="%BASE_URL%visit/" data-nav="visit">The line</a></li>
+            <li><a class="flex min-h-11 items-center px-3 font-medium no-underline decoration-2 underline-offset-[0.35em] hover:underline aria-[current=page]:underline" href="%BASE_URL%location/" data-nav="location">Location</a></li>
+          </ul>
+        </nav>
+        <div class="ml-auto flex items-center gap-1 lg:gap-2">
+          <!-- The label is known before first paint: the boot script in <head> sets data-signed-in from storage -->
+          <a class="inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-sm font-medium no-underline decoration-2 underline-offset-[0.35em] transition-colors hover:bg-surface aria-[current=page]:bg-surface lg:px-3 lg:hover:bg-transparent lg:hover:underline lg:aria-[current=page]:bg-transparent lg:aria-[current=page]:underline" href="%BASE_URL%account/" data-nav="account">
+            <i data-icon="user-circle" class="size-6"></i>
+            <span class="max-lg:sr-only in-data-[signed-in]:hidden">Sign in</span>
+            <span class="hidden max-lg:sr-only in-data-[signed-in]:inline">Account</span>
+          </a>
+          <a class="relative inline-flex size-11 items-center justify-center rounded-sm transition-colors hover:bg-surface aria-[current=page]:bg-surface" href="%BASE_URL%basket/" data-nav="basket">
+            <i data-icon="basket" class="size-6"></i>
+            <span class="sr-only">Basket</span>
+            <span class="num absolute top-0 right-0 grid h-5 min-w-5 place-items-center rounded-full bg-ink px-1 text-xs leading-none text-canvas" data-basket-badge hidden><span data-basket-count>0</span> <span class="sr-only" data-basket-unit>items</span></span>
+          </a>
+          <a class="ml-1 inline-flex min-h-11 items-center justify-center rounded-sm bg-accent px-4 text-md font-semibold text-accent-ink no-underline transition-colors hover:bg-accent-hover active:translate-y-px lg:ml-2 lg:min-h-12 lg:px-6" href="%BASE_URL%visit/"><span class="sm:hidden">Join</span><span class="max-sm:hidden">Join the line</span></a>
+        </div>
+        <!-- Phones only, and only with scripts: last in the bar and in Tab order; the menu's close button takes its spot -->
+        <button class="menu-toggle size-11 items-center justify-center rounded-sm text-ink transition-colors hover:bg-surface" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu" data-menu-toggle>
+          <i data-icon="list" class="size-6"></i>
+        </button>
+      </div>
+
+      <!-- Covers the page, so it needs no scrim; shared/nav.ts opens it with showModal() -->
+      <dialog class="menu-panel inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto overscroll-contain border-0 bg-graphite p-0 text-on-graphite [--focus-color:var(--color-on-graphite)]" id="site-menu" aria-label="Menu">
+        <div class="flex min-h-full flex-col">
+          <div class="wrap flex h-16 shrink-0 items-center gap-3">
+            <div class="min-w-0" data-hours data-msg-open="Open now, until 8:00 PM" data-msg-closed-today="Closed now, opens today at 7:00 AM" data-msg-closed-tomorrow="Closed now, opens tomorrow at 7:00 AM">
+              <p class="flex items-start gap-2 font-semibold" data-open-line data-open="true"><span class="mt-2 size-2 shrink-0 rounded-full bg-on-graphite-muted in-data-[open=true]:bg-success-on-graphite" aria-hidden="true"></span><span data-open-pill>Open now, until 8:00 PM</span></p>
+            </div>
+            <button class="ml-auto inline-flex size-11 shrink-0 items-center justify-center rounded-sm transition-colors hover:bg-graphite-raised" type="button" aria-label="Close menu" data-menu-close><i data-icon="x" class="size-6"></i></button>
+          </div>
+          <nav aria-label="Main">
+          <ul class="wrap mt-4 grid border-t border-rule-on-graphite">
+            <li><a class="stretch-display flex min-h-16 items-center border-b border-rule-on-graphite text-[clamp(2.25rem,1.6rem+3vw,3rem)] leading-none font-bold no-underline decoration-[3px] underline-offset-[0.12em] hover:underline aria-[current=page]:underline" href="%BASE_URL%services/" data-nav="services">Prices</a></li>
+            <li><a class="stretch-display flex min-h-16 items-center border-b border-rule-on-graphite text-[clamp(2.25rem,1.6rem+3vw,3rem)] leading-none font-bold no-underline decoration-[3px] underline-offset-[0.12em] hover:underline aria-[current=page]:underline" href="%BASE_URL%plans/" data-nav="plans">Wash packs</a></li>
+            <li><a class="stretch-display flex min-h-16 items-center border-b border-rule-on-graphite text-[clamp(2.25rem,1.6rem+3vw,3rem)] leading-none font-bold no-underline decoration-[3px] underline-offset-[0.12em] hover:underline aria-[current=page]:underline" href="%BASE_URL%visit/" data-nav="visit">The line</a></li>
+            <li><a class="stretch-display flex min-h-16 items-center border-b border-rule-on-graphite text-[clamp(2.25rem,1.6rem+3vw,3rem)] leading-none font-bold no-underline decoration-[3px] underline-offset-[0.12em] hover:underline aria-[current=page]:underline" href="%BASE_URL%location/" data-nav="location">Location</a></li>
+          </ul>
+          </nav>
+          <ul class="wrap mt-4 flex flex-wrap gap-x-8 gap-y-1">
+            <li><a class="inline-flex min-h-11 items-center gap-2 font-semibold no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%account/" data-nav="account"><i data-icon="user-circle" class="size-6"></i><span class="in-data-[signed-in]:hidden">Sign in</span><span class="hidden in-data-[signed-in]:inline">Account</span></a></li>
+            <li><a class="inline-flex min-h-11 items-center gap-2 font-semibold no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%basket/" data-nav="basket"><i data-icon="basket" class="size-6"></i>Basket</a></li>
+          </ul>
+          <div class="wrap mt-auto pt-8 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+            <a class="flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-6 text-md font-semibold text-accent-ink no-underline transition-colors hover:bg-accent-hover active:translate-y-px" href="%BASE_URL%visit/">Join the line</a>
+          </div>
+        </div>
+      </dialog>
+    </header>

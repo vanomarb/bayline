@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found: Bayline</title>
+    <meta name="description" content="There’s no page at this address. Bayline is a concept car wash in Subangdaku, Mandaue City." />
+    <meta name="robots" content="noindex" />
+    <!-- No canonical: a missing page has no address of its own to point to. -->
+    <meta property="og:title" content="Page not found: Bayline" />
+    <meta property="og:description" content="There’s no page at this address. Bayline is a concept car wash in Subangdaku, Mandaue City." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%VITE_SITE_URL%404.html" />
+    <meta property="og:image" content="%VITE_SITE_URL%og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- The host serves this page for any missing path, so relative links resolve from the site root. -->
+    <base href="%BASE_URL%" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="oklch(1 0 0)" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Before first paint: .js for the enhanced layout, and data-signed-in so the header says Account, not Sign in -->
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('bayline.session'))document.documentElement.dataset.signedIn=''}catch(e){}</script>
+    <script type="module" src="/main.ts"></script>
+  </head>
+  <body>
+    <!-- @include header -->
+
+    <main class="wrap grid min-h-[60dvh] content-center justify-items-start gap-6 py-12" id="main">
+      <h1 class="max-w-measure text-h2">There’s no page at this address.</h1>
+      <p class="max-w-measure text-lg text-muted">What you were after is probably on one of these pages.</p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-1">
+        <li><a class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4" href="%BASE_URL%services/">Prices by vehicle</a></li>
+        <li><a class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4" href="%BASE_URL%plans/">Wash packs</a></li>
+        <li><a class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4" href="%BASE_URL%visit/">Join the line or book a time</a></li>
+        <li><a class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4" href="%BASE_URL%location/">Hours, location and FAQ</a></li>
+      </ul>
+      <a class="inline-flex min-h-12 items-center justify-center rounded-sm border-[1.5px] border-ink px-6 text-md font-semibold text-ink no-underline transition-colors hover:bg-surface" href="%BASE_URL%">Back to the home page</a>
+    </main>
+
+    <!-- @include footer -->
+  </body>
+</html>

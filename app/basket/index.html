@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your basket: Bayline car wash, Mandaue City</title>
+    <meta name="description" content="Review the washes and the wash pack in your Bayline basket, then book a time or start the pack, paying by GCash, Maya or card." />
+    <link rel="canonical" href="%VITE_SITE_URL%basket/" />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="Your basket: Bayline car wash, Mandaue City" />
+    <meta property="og:description" content="Review the washes and the wash pack in your Bayline basket, then book a time or start the pack, paying by GCash, Maya or card." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%VITE_SITE_URL%basket/" />
+    <meta property="og:image" content="%VITE_SITE_URL%og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bayline, a concept car wash in Subangdaku, Mandaue City: a soaped sedan in a wash bay and the current wait for a walk-in." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Your basket: Bayline car wash, Mandaue City" />
+    <meta name="twitter:description" content="Review the washes and the wash pack in your Bayline basket, then book a time or start the pack, paying by GCash, Maya or card." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%og.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="oklch(1 0 0)" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/node_modules/@fontsource-variable/saira/files/saira-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Before first paint: .js for the enhanced layout, and data-signed-in so the header says Account, not Sign in -->
+    <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('bayline.session'))document.documentElement.dataset.signedIn=''}catch(e){}</script>
+    <script type="module" src="/main.ts"></script>
+  </head>
+  <body>
+    <a class="absolute top-2 left-4 z-50 -translate-y-[200%] rounded-sm bg-ink px-4 py-2 font-semibold text-canvas focus-visible:translate-y-0" href="#main">Skip to content</a>
+
+    <!-- @include header current="basket" -->
+
+    <!-- Tall enough that the footer starts below the fold, so filling in the basket never moves it on screen -->
+    <main class="min-h-[calc(100svh-var(--header))]" id="main">
+      <section
+        class="section-pad"
+        aria-labelledby="basket-title"
+        data-basket-page
+        data-msg-vehicle="For a {vehicle}"
+        data-msg-remove="Remove {service}"
+        data-msg-removed="Removed {service}."
+        data-msg-plan-removed="Removed the {plan} pack."
+                data-msg-plate-label="Plate number {n}"
+        data-msg-plate-empty="Type the plate number."
+        data-msg-plate-invalid="That doesn’t look like a plate number. Type it as printed, like NBC 1234."
+        data-msg-plate-repeat="That plate already has a pack in this order. Each pack is for one plate."
+        data-msg-pick-payment="Choose how you’ll pay: GCash, Maya or card."
+        data-msg-subscribe="Start for {price} a month"
+        data-msg-active="You already have {plan} on {plates}, since {date}. Starting this pack replaces it."
+        data-msg-replace="Replace my pack, {price} a month"
+        data-msg-replaced="Wash pack replaced: {plan} for {plates}, {price} a month by {payment}, in place of {previous}. Nothing was charged: this is a demonstration site, and no payment page opened."
+        data-msg-started="Wash pack started: {plan} for {plates}, {price} a month by {payment}. Nothing was charged: this is a demonstration site, and no payment page opened."
+        data-msg-blocked="This browser is blocking the site’s storage, so the basket can’t be kept. Allow site data for this page, or book from the line page."
+      >
+        <div class="wrap">
+          <div class="max-w-text">
+            <h1 class="text-h1" id="basket-title" tabindex="-1">Your basket</h1>
+            <p class="mt-4 text-lg text-muted">Check what’s in it, then book a time for your wash or start your wash pack. You pay by GCash, Maya or card.</p>
+          </div>
+          <p class="mt-8 text-lg" data-fallback>The basket needs JavaScript. Every price is on the <a class="font-semibold underline underline-offset-4" href="/bayline/services/">price list</a> and the <a class="font-semibold underline underline-offset-4" href="/bayline/plans/">wash packs page</a>.</p>
+
+          <div data-enhanced>
+            <template data-trash-icon><i data-icon="trash" class="size-5"></i></template>
+            <p class="mt-8 flex items-start gap-2 font-semibold empty:hidden" role="status" data-basket-note></p>
+            <p class="mt-8 flex items-start gap-2 font-semibold text-danger" role="alert" data-basket-blocked hidden><i data-icon="warning-circle" data-weight="fill" class="mt-0.5 size-5"></i><span data-error-text></span></p>
+
+            <!-- Empty: shown until the script finds something, which for a first visit is never -->
+            <div class="mt-10 max-w-text border-t border-line-strong pt-8" data-basket-empty>
+              <h2 class="text-h3">Your basket is empty</h2>
+              <p class="mt-2 text-muted">Add washes from the price list, or a wash pack if you wash often.</p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a class="inline-flex min-h-12 items-center justify-center rounded-sm border-[1.5px] border-ink px-6 text-md font-semibold text-ink no-underline transition-colors hover:bg-surface active:translate-y-px" href="/bayline/services/">See prices</a>
+                <a class="inline-flex min-h-12 items-center justify-center rounded-sm border-[1.5px] border-ink px-6 text-md font-semibold text-ink no-underline transition-colors hover:bg-surface active:translate-y-px" href="/bayline/plans/">See wash packs</a>
+              </div>
+            </div>
+
+            <div class="mt-10 grid items-start gap-x-12 gap-y-14 lg:grid-cols-12">
+              <section class="border-t border-line-strong pt-8 lg:col-span-6" aria-labelledby="wash-title" data-basket-wash hidden>
+                <h2 class="text-h2" id="wash-title" tabindex="-1">Wash to book</h2>
+                <div class="mt-6 flex items-center gap-4">
+                  <span class="w-28 shrink-0" data-wash-photo></span>
+                  <div>
+                    <p class="text-lg font-semibold" data-wash-vehicle>For a small car</p>
+                    <a class="inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4" href="/bayline/services/" data-wash-change>Change in the price list</a>
+                  </div>
+                </div>
+                <ul class="mt-4 border-t border-line" data-wash-lines></ul>
+                <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-t-2 border-ink pt-4">
+                  <p class="text-muted">Total, paid when you book</p>
+                  <p class="flex items-baseline gap-x-3"><span class="num text-total font-bold" data-wash-total>₱0</span><span class="num text-lg" data-wash-time></span></p>
+                </div>
+                <a class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-6 text-md font-semibold text-accent-ink no-underline transition-colors hover:bg-accent-hover active:translate-y-px sm:w-auto" href="/bayline/visit/#book" data-wash-book>Choose a time</a>
+                <p class="mt-3 text-sm text-muted">Next: a day and a start time, your plate number, and GCash, Maya or card.</p>
+              </section>
+
+              <section class="border-t border-line-strong pt-8 lg:col-span-6" aria-labelledby="plan-title" data-basket-plan hidden>
+                <h2 class="text-h2" id="plan-title" tabindex="-1">Wash pack to start</h2>
+                <div class="mt-6 flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+                  <div>
+                    <p class="text-h3" data-plan-name>Express 8</p>
+                    <p class="text-muted" data-plan-vehicle>For a small car</p>
+                  </div>
+                  <button class="inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-4" type="button" data-remove-plan><i data-icon="trash" class="size-4"></i>Remove pack</button>
+                </div>
+
+                <p class="mt-4 flex items-start gap-2 rounded-sm border-[1.5px] border-ink px-4 py-3 font-semibold" data-plan-active hidden><i data-icon="warning-circle" data-weight="fill" class="mt-0.5 size-5"></i><span data-active-text></span></p>
+
+                <form class="mt-6 grid gap-6" data-subscribe-form novalidate>
+                  <div class="flex flex-wrap items-center justify-between gap-4 border-y border-line py-4">
+                    <div>
+                      <p class="font-semibold" id="plates-label">Packs, one plate each</p>
+                      <p class="text-sm text-muted"><span class="num" data-plan-each>₱1,220</span> a month for each pack</p>
+                    </div>
+                    <div class="flex items-center gap-2" role="group" aria-labelledby="plates-label">
+                      <button class="inline-flex size-11 items-center justify-center rounded-sm border-[1.5px] border-ink transition-colors hover:bg-surface disabled:cursor-not-allowed disabled:border-line-strong disabled:text-muted" type="button" data-plates-step="-1" aria-label="One pack fewer"><i data-icon="minus" class="size-5"></i></button>
+                      <output class="num w-10 text-center text-lg" aria-live="polite" data-plates>1</output>
+                      <button class="inline-flex size-11 items-center justify-center rounded-sm border-[1.5px] border-ink transition-colors hover:bg-surface disabled:cursor-not-allowed disabled:border-line-strong disabled:text-muted" type="button" data-plates-step="1" aria-label="One pack more"><i data-icon="plus" class="size-5"></i></button>
+                    </div>
+                  </div>
+
+                  <fieldset>
+                    <legend class="mb-3 font-semibold">Plate numbers</legend>
+                    <div class="grid gap-4 sm:grid-cols-2" data-plate-fields></div>
+                  </fieldset>
+
+                  <fieldset aria-describedby="basket-payment-note">
+                    <legend class="mb-3 font-semibold">Pay with</legend>
+                    <div class="grid grid-cols-3 gap-2">
+                      <label class="relative flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-sm border-[1.5px] border-line-strong bg-canvas px-2 font-semibold transition-colors hover:border-ink has-checked:border-ink has-checked:bg-ink has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"><input class="absolute inset-0 m-0 cursor-pointer opacity-0" type="radio" name="payment" value="gcash" /><i data-icon="device-mobile" class="size-5 max-sm:hidden"></i>GCash</label>
+                      <label class="relative flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-sm border-[1.5px] border-line-strong bg-canvas px-2 font-semibold transition-colors hover:border-ink has-checked:border-ink has-checked:bg-ink has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"><input class="absolute inset-0 m-0 cursor-pointer opacity-0" type="radio" name="payment" value="maya" /><i data-icon="device-mobile" class="size-5 max-sm:hidden"></i>Maya</label>
+                      <label class="relative flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-sm border-[1.5px] border-line-strong bg-canvas px-2 font-semibold transition-colors hover:border-ink has-checked:border-ink has-checked:bg-ink has-checked:text-canvas has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"><input class="absolute inset-0 m-0 cursor-pointer opacity-0" type="radio" name="payment" value="card" /><i data-icon="credit-card" class="size-5 max-sm:hidden"></i>Card</label>
+                    </div>
+                    <p class="mt-3 text-sm text-muted" id="basket-payment-note">GCash and Maya ask you to approve the payment in their app, and cards go to your bank’s secure page, so Bayline never sees your card or wallet details. A pack renews each month until you cancel it before the next month starts.</p>
+                  </fieldset>
+
+                  <p class="flex items-start gap-2 text-sm font-semibold text-danger" role="alert" data-subscribe-error hidden><i data-icon="warning-circle" data-weight="fill" class="mt-px size-5"></i><span data-error-text></span></p>
+                  <button class="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-accent px-6 text-md font-semibold text-accent-ink transition-colors hover:bg-accent-hover active:translate-y-px sm:w-auto sm:justify-self-start" type="submit" data-subscribe>Start for ₱1,220 a month</button>
+                </form>
+              </section>
+            </div>
+
+            <div class="mt-10 flex max-w-text items-start gap-3 rounded-sm border-[1.5px] border-success p-4" tabindex="-1" data-subscribed hidden>
+              <i data-icon="check-circle" data-weight="fill" class="mt-0.5 size-6 text-success"></i>
+              <div class="grid gap-2">
+                <p class="font-semibold" data-subscribed-text></p>
+                <a class="inline-flex min-h-11 items-center justify-self-start font-semibold underline underline-offset-4" href="/bayline/account/">See it in your account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer -->
+  </body>
+</html>

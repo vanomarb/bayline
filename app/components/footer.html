@@ -1,0 +1,65 @@
+    <!-- shared/status.ts keeps the status strip current; on the line page its figure follows the bay board -->
+    <footer class="bg-graphite text-on-graphite [--focus-color:var(--color-on-graphite)]">
+      <div class="wrap">
+        <div class="grid gap-x-10 gap-y-6 border-b border-rule-on-graphite py-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-center" data-footer-status>
+          <div data-hours data-msg-open="Open now, until 8:00 PM" data-msg-closed-today="Closed now, opens today at 7:00 AM" data-msg-closed-tomorrow="Closed now, opens tomorrow at 7:00 AM">
+            <p class="stretch-display flex items-start gap-3 text-h2 font-bold" data-open-line data-open="true" data-enhanced><span class="mt-[0.3em] size-3 shrink-0 rounded-full bg-on-graphite-muted in-data-[open=true]:bg-success-on-graphite" aria-hidden="true"></span><span data-open-pill>Open now, until 8:00 PM</span></p>
+            <p class="stretch-display text-h2 font-bold" data-fallback>Every day, 7:00 AM to 8:00 PM</p>
+            <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-on-graphite-muted">
+              <li class="flex items-center gap-2" data-enhanced><i data-icon="clock" class="size-4"></i><span class="num">Every day, 7:00 AM to 8:00 PM</span></li>
+              <li class="flex items-center gap-2"><i data-icon="map-pin" class="size-4"></i>Subangdaku, Mandaue City</li>
+              <li class="flex items-center gap-2" data-enhanced data-yard-line data-msg-line="{waiting} in line, about {wait} min to wait" data-msg-line-free="A bay is free now, no wait" data-msg-line-closed="No line until 7:00 AM"><i data-icon="timer" class="size-4"></i><span class="num" data-yard-text>3 in line, about 25 min to wait</span></li>
+            </ul>
+          </div>
+          <a class="inline-flex min-h-12 items-center justify-center rounded-sm bg-accent px-6 text-md font-semibold text-accent-ink no-underline transition-colors hover:bg-accent-hover active:translate-y-px" href="%BASE_URL%visit/">Join the line</a>
+        </div>
+
+        <nav class="flex flex-wrap items-center gap-x-6 border-b border-rule-on-graphite py-4" aria-label="Footer">
+          <a class="stretch-display mr-4 inline-flex min-h-11 items-center text-[1.375rem] font-bold tracking-wordmark no-underline" href="%BASE_URL%" aria-label="Bayline home">Bayline</a>
+          <ul class="flex flex-wrap gap-x-6">
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%services/" data-nav="services">Prices</a></li>
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%plans/" data-nav="plans">Wash packs</a></li>
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%visit/" data-nav="visit">The line</a></li>
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%location/" data-nav="location">Location</a></li>
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline" href="%BASE_URL%location/#faq">FAQ</a></li>
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%about/" data-nav="about">About</a></li>
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%contact/" data-nav="contact">Contact</a></li>
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%accessibility/" data-nav="accessibility">Accessibility</a></li>
+            <li><a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%account/" data-nav="account">Your account</a></li>
+          </ul>
+        </nav>
+
+        <!-- About this site sits apart with the info mark, like the line page's sample-board note; without scripts it opens Terms -->
+        <div class="flex flex-wrap items-center gap-x-6 py-3 text-sm text-on-graphite-muted" data-legal-row>
+          <p class="py-3">© 2026 Bayline</p>
+          <a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%terms/" data-nav="terms">Terms of Service</a>
+          <a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%privacy/" data-nav="privacy">Privacy Policy</a>
+          <a class="inline-flex min-h-11 items-center no-underline hover:underline aria-[current=page]:underline" href="%BASE_URL%cookies/" data-nav="cookies">Cookie Policy</a>
+          <a class="inline-flex min-h-11 items-center gap-2 font-semibold text-on-graphite underline-offset-4 hover:underline sm:ml-auto" href="%BASE_URL%terms/#demonstration" data-concept><i data-icon="info" class="size-4"></i>About this site</a>
+        </div>
+
+        <div class="pb-8">
+            <details class="group text-sm text-on-graphite-muted">
+            <summary class="inline-flex min-h-11 cursor-pointer list-none items-center gap-2 font-semibold text-on-graphite [&::-webkit-details-marker]:hidden">Photo credits<i data-icon="caret-down" class="size-4 transition-transform duration-150 group-open:rotate-180"></i></summary>
+            <ul class="mt-2 grid max-w-[48rem] gap-2 pb-2">
+              <li>Wash bay photos (the sedan in soap and the hand-held buff) by <a class="text-on-graphite" href="https://www.pexels.com/@khunkorn-laowisit-1359149/">Khunkorn Laowisit</a> on Pexels, under the <a class="text-on-graphite" href="https://www.pexels.com/license/">Pexels License</a>. Cropped.</li>
+              <li>Small car: “<a class="text-on-graphite" href="https://commons.wikimedia.org/wiki/File:2003-2005_Toyota_Vios_Ph.JPG">2003-2005 Toyota Vios Ph</a>” by Mike384, <a class="text-on-graphite" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Background removed, plate blurred, mirrored.</li>
+              <li>Medium vehicle: “<a class="text-on-graphite" href="https://commons.wikimedia.org/wiki/File:2017-2018_Toyota_Fortuner_(AN160)_2.4_V_SUV_(22-03-2018)_01.jpg">2017-2018 Toyota Fortuner</a>” by Jirapat Chroenkeskij, <a class="text-on-graphite" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. Background removed, plate blurred.</li>
+              <li>Large vehicle: “<a class="text-on-graphite" href="https://commons.wikimedia.org/wiki/File:Toyota_Hilux_3.0_G_4x4_2007.jpg">Toyota Hilux 3.0 G 4x4 2007</a>” by Ethan Llamas, <a class="text-on-graphite" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Background, roof rack and roll bar removed, plate blurred.</li>
+              <li>Motorcycle: “<a class="text-on-graphite" href="https://commons.wikimedia.org/wiki/File:Honda_Click,_Trang,_Thailand.jpg">Honda Click, Trang, Thailand</a>” by Vyacheslav Argenberg, <a class="text-on-graphite" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Background removed.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </footer>
+
+    <dialog class="m-auto max-h-[calc(100dvh-2*var(--gutter))] w-[min(34rem,calc(100%-2*var(--gutter)))] rounded-sm bg-canvas p-0 text-ink backdrop:bg-backdrop" id="concept-dialog" aria-labelledby="concept-title">
+      <div class="grid gap-4 p-6">
+        <h2 class="text-h3" id="concept-title">About this site</h2>
+        <p>Bayline is a concept brand, and this is a demonstration site. There is no Bayline car wash to drive to.</p>
+        <p>Everything on it works the way the shop’s own site would: the line, bookings, wash packs, the basket and signing in. All of it stays in this browser. Nothing you enter is sent, no codes are texted or emailed, and no payments are taken.</p>
+        <p>Your sign-in, basket, wash pack and bookings are kept in this browser’s local storage until you sign out, remove them or clear the site’s data.</p>
+        <p class="flex flex-wrap gap-x-6"><a class="inline-flex min-h-11 items-center font-semibold" href="%BASE_URL%terms/">Terms of Service</a><a class="inline-flex min-h-11 items-center font-semibold" href="%BASE_URL%privacy/">Privacy Policy</a></p>
+        <button class="inline-flex min-h-12 items-center justify-self-start rounded-sm border-[1.5px] border-ink px-6 text-md font-semibold transition-colors hover:bg-surface" type="button" data-dialog-close>Close</button>
+      </div>
+    </dialog>

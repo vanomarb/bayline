@@ -1,0 +1,33 @@
+{
+  "name": "bayline",
+  "version": "1.0.0",
+  "description": "Concept car wash and detailing website: walk-in queue by plate number, scheduling and prices by vehicle.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json && vite build",
+    "preview": "vite preview",
+    "build:capture": "vite build --mode capture",
+    "preview:capture": "vite preview --mode capture --port 4125 --strictPort",
+    "test": "node --test \"app/**/*.test.ts\" \"build/**/*.test.ts\" \"tests/**/*.test.ts\"",
+    "test:tz": "TZ=America/Los_Angeles node --test \"app/**/*.test.ts\" \"build/**/*.test.ts\" \"tests/**/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/jsdom": "30.0.0",
+    "@types/node": "22.20.5",
+    "jsdom": "30.1.3",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  },
+  "dependencies": {
+    "@fontsource-variable/saira": "^5.3.0",
+    "@phosphor-icons/core": "^2.1.1"
+  }
+}
